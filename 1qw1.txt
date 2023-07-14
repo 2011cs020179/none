@@ -1,7 +1,8 @@
 
 ng new 1stq
 
-src/index.html
+src/index.html:
+
 <!DOCTYPE html>
 <html>
 <head>
