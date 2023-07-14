@@ -1,0 +1,35 @@
+
+not sure of execution
+
+data.json:
+
+[
+  {
+    "Student_Name": "Binod",
+    "Student_address": "Hyderabad",
+    "Phone_no": "9000790211",
+    "Marks": 88
+  },
+  {
+    "Student_Name": "Smith",
+    "Student_address": "Delhi",
+    "Phone_no": "9825801112",
+    "Marks": 90
+  },
+  {
+    "Student_Name": "John",
+    "Student_address": "Mumbai",
+    "Phone_no": "9725772500",
+    "Marks": 65
+  }
+]
+
+mongoimport --db studentsdb --collection students --file data.json --jsonArray
+
+use studentsdb
+db.students.find()
+
+db.students.updateMany({}, { $inc: { Marks: 2 } })
+
+db.students.updateOne({ Student_Name: "Binod" }, { $set: { Phone_no: "9101884569" } })
+

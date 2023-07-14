@@ -1,0 +1,46 @@
+
+create any folder and open in vscode
+
+npm init
+
+create App.js:
+
+var fs = require("fs");
+console.log("writing into existing file");
+fs.writeFile('input.txt', 'Malla Reddy', function(err) {
+if (err) {
+	return console.error(err);
+}
+console.log("Data written successfully!");
+});
+
+var data = "\nUniversity";
+fs.appendFile('input.txt', data, 'utf8',
+    function(err) {
+        if (err) throw err;
+        console.log("Data is appended to file successfully.")
+});
+
+fs.readFile('input.txt', function (err, data) {
+      if (err) {
+         return console.error(err);
+      }
+      console.log("Asynchronous read: " + data.toString());
+});
+
+file_descriptor = fs.openSync("input.txt");
+console.log("The file descriptor is:", file_descriptor);
+
+fs.close(file_descriptor, (err) => {
+  if (err)
+    console.error('Failed to close file', err);
+  else {
+    console.log("\n> File Closed successfully");
+  }
+});
+
+create input.txt
+
+npm install fs
+
+node App.js

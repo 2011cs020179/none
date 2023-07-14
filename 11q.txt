@@ -1,0 +1,15 @@
+
+use employee
+
+db.createCollection("students")
+
+db.students.insertMany([{"Name":"Binod","address":"Hyderabad","Phone_no":9000789211,"Salary":10000},{"Name":"Smith","address":"Delhi","Phone_no":982580212,"Salary":15000},{"Name":"John","address":"Delhi","Phone_no":9725652582,"Salary":8000}]);
+
+
+db.students.updateOne({Name: "Smith"},{$inc: {Salary: 5000}})
+
+db.students.deleteOne({Name: "Binod"})
+
+db.students.drop()
+
+db.dropDatabase()
