@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template:`<h1> My Location Details</h1>
             <div>
-					<div class="name">Place:{{ user.name }}</div>
-					<div class="address">Name:{{user.address}}</div>
-				</div>`,
+              <div class="name">Place:{{ user.name }}</div>
+              <div class="address">Name:{{user.address}}</div>
+            </div>`,
 })
 export class AppComponent {
   title = 'myapp';
